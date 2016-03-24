@@ -1,4 +1,4 @@
-package ru.glavset.aprilfirst;
+package ru.glavset.gorb;
 
 import java.util.Random;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AprilFirst v0.1</string>
+    <string name="app_name">Global Operation Resistance Broadcast</string>
     <string name="NickNameButton_string">Change Nick Name</string>
     <string name="copy_button_string">Copy to clipboard</string>
     <string name="gen_button_string">Generate</string>

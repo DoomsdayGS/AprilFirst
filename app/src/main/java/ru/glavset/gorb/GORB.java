@@ -1,4 +1,4 @@
-package ru.glavset.aprilfirst;
+package ru.glavset.gorb;
 
 
 import android.Manifest;
@@ -35,7 +35,7 @@ import java.util.Date;
 import java.util.Locale;
 
 
-public class AprilFirst extends AppCompatActivity {
+public class GORB extends AppCompatActivity {
     public Context context;
     public static String NickNameString = "";
     public static String NickNameDefault = "Введите ваш ник";
@@ -89,7 +89,7 @@ public class AprilFirst extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.NickNameButton:
-                    Intent intent = new Intent(AprilFirst.this, InputNick.class);
+                    Intent intent = new Intent(GORB.this, InputNick.class);
                     startActivity(intent);
 
                     break;
@@ -97,7 +97,7 @@ public class AprilFirst extends AppCompatActivity {
                     if ((NickNameString.length() != 0) & (NickNameString != NickNameDefault)) {
                         //Criteria criteria = new Criteria();
                         //String bestProvider = locationManager.getBestProvider(criteria, false);
-                        if (ActivityCompat.checkSelfPermission(AprilFirst.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(AprilFirst.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        if (ActivityCompat.checkSelfPermission(GORB.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(GORB.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                             // TODO: Consider calling
                             //    ActivityCompat#requestPermissions
                             // here to request the missing permissions, and then overriding
@@ -108,11 +108,15 @@ public class AprilFirst extends AppCompatActivity {
                             return;
                         }
                         Location location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-                        double currentLongitude = location.getLongitude();
-                        double currentLatitude = location.getLatitude();
-                        int Longitude = (int) Math.floor(currentLongitude*1000000);
-                        int Latitude = (int) Math.floor(currentLatitude*1000000);
-                        url = urla + NickNameString + "\",\"Lat\":\"" + Latitude + "\",\"Lng\":\"" + Longitude + "\"}";
+                        if(location != null) {
+                            double currentLongitude = location.getLongitude();
+                            double currentLatitude = location.getLatitude();
+                            int Longitude = (int) Math.floor(currentLongitude*1000000);
+                            int Latitude = (int) Math.floor(currentLatitude*1000000);
+                            url = urla + NickNameString + "\",\"Lat\":\"" + Latitude + "\",\"Lng\":\"" + Longitude + "\"}";
+                        } else {
+                            url = urla + NickNameString + "\"}";
+                        }
 
 
                         JsonObjectRequest jsObjRequest = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -170,7 +174,7 @@ public class AprilFirst extends AppCompatActivity {
                         ClipData clip = ClipData.newPlainText("Copied Text", MyCode64String);
                         clipboard.setPrimaryClip(clip);
 
-                        launchIngress(AprilFirst.this);
+                        launchIngress(GORB.this);
                     }
 
 

@@ -1,4 +1,4 @@
-package ru.glavset.aprilfirst;
+package ru.glavset.gorb;
 
 import org.junit.Test;
 

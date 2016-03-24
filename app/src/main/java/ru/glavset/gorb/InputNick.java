@@ -1,4 +1,4 @@
-package ru.glavset.aprilfirst;
+package ru.glavset.gorb;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -23,20 +23,20 @@ public class InputNick extends Activity{
 
 
         editText = (EditText)findViewById(R.id.editText);
-        editText.setHint(AprilFirst.NickNameDefault);
+        editText.setHint(GORB.NickNameDefault);
         final Button okButton;
         okButton = (Button) findViewById(R.id.ok_button);
         okButton.setOnClickListener(new View.OnClickListener() {
                                        public void onClick(View v){
                                            switch (v.getId()){
                                                case R.id.ok_button:
-                                                if ((editText.getText().toString().length() != 0) & (editText.getText().toString() != AprilFirst.NickNameDefault)){
-                                                    AprilFirst.NickNameString = editText.getText().toString();
-                                                    AprilFirst.textView.setText(AprilFirst.NickNameString);
-                                                    AprilFirst.textView.setTextColor(Color.BLUE);
+                                                if ((editText.getText().toString().length() != 0) & (editText.getText().toString() != GORB.NickNameDefault)){
+                                                    GORB.NickNameString = editText.getText().toString();
+                                                    GORB.textView.setText(GORB.NickNameString);
+                                                    GORB.textView.setTextColor(Color.BLUE);
 
-                                                    SharedPreferences.Editor editor = AprilFirst.mSettings.edit();
-                                                    editor.putString(AprilFirst.APP_PREFERENCES_nickName, AprilFirst.NickNameString);
+                                                    SharedPreferences.Editor editor = GORB.mSettings.edit();
+                                                    editor.putString(GORB.APP_PREFERENCES_nickName, GORB.NickNameString);
                                                     editor.apply();
                                                     finish();
                                                 }

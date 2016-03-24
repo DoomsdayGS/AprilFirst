@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AprilFirst v0.11</string>
+    <string name="app_name">Global Operation Resistance Broadcast</string>
     <string name="NickNameButton_string">Изменить ник</string>
     <string name="gen_button_string">Генерировать</string>
     <string name="textView_string">Код в Base64</string>

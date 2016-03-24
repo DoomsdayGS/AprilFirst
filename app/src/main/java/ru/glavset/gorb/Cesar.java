@@ -1,4 +1,4 @@
-package ru.glavset.aprilfirst;
+package ru.glavset.gorb;
 
 /**
  * Created by Roman on 29.01.2016.
