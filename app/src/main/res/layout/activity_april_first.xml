@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Main"
+    >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+           >
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/NickName"
+        android:textSize="20sp"
+        android:textIsSelectable="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/NickNameButton_string"
+        android:id="@+id/NickNameButton"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gen_button_string"
+        android:id="@+id/gen_button"
+ />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/ResultCode"
+        android:textSize="20sp"
+        android:textIsSelectable="true"
+        style="@style/Widget.AppCompat.Button.Borderless" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cesarString"
+                android:id="@+id/cesarText"
+                android:textSize="20sp"
+                android:textIsSelectable="false"
+                android:background="@color/material_grey_300"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/ResultCodeCesar"
+                android:textSize="10sp"
+                android:textIsSelectable="true"
+                style="@style/Widget.AppCompat.Button.Borderless" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textView_string"
+        android:id="@+id/textView"
+        android:textSize="20sp"
+        android:textIsSelectable="false"
+        android:background="@color/material_grey_300"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/ResultCodeBase64"
+        android:textSize="10sp"
+        android:textIsSelectable="true"
+        style="@style/Widget.AppCompat.Button.Borderless" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/copy_button_string"
+        android:id="@+id/copy_button"
+
+        />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

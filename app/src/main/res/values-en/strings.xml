@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AprilFirst v0.1</string>
+    <string name="NickNameButton_string">Change Nick Name</string>
+    <string name="copy_button_string">Copy to clipboard</string>
+    <string name="gen_button_string">Generate</string>
+    <string name="input_nick">Enter Nick Name</string>
+    <string name="ok_string">Ок</string>
+    <string name="textView_string">Code to Base64</string>
+    <string name="cesarString">Code to Cesar</string>
+</resources>
