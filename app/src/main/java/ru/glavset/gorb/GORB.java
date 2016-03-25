@@ -56,7 +56,7 @@ public class GORB extends AppCompatActivity {
     public String Lat = "";
     public String Lng = "";
     private LocationManager locationManager;
-
+    private Location location;
 
 
     @Override
@@ -87,6 +87,7 @@ public class GORB extends AppCompatActivity {
 
     public View.OnClickListener myButtonListener = new View.OnClickListener() {
         public void onClick(View v) {
+            Log.d("Jr", "Нажали кнопку");
             switch (v.getId()) {
                 case R.id.NickNameButton:
                     Intent intent = new Intent(GORB.this, InputNick.class);
@@ -97,17 +98,11 @@ public class GORB extends AppCompatActivity {
                     if ((NickNameString.length() != 0) & (NickNameString != NickNameDefault)) {
                         //Criteria criteria = new Criteria();
                         //String bestProvider = locationManager.getBestProvider(criteria, false);
-                        if (ActivityCompat.checkSelfPermission(GORB.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(GORB.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                            // TODO: Consider calling
-                            //    ActivityCompat#requestPermissions
-                            // here to request the missing permissions, and then overriding
-                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                            //                                          int[] grantResults)
-                            // to handle the case where the user grants the permission. See the documentation
-                            // for ActivityCompat#requestPermissions for more details.
-                            return;
+                        try {
+                            location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                        } catch (SecurityException e) {
+                            //
                         }
-                        Location location = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
                         if(location != null) {
                             double currentLongitude = location.getLongitude();
                             double currentLatitude = location.getLatitude();
@@ -115,7 +110,7 @@ public class GORB extends AppCompatActivity {
                             int Latitude = (int) Math.floor(currentLatitude*1000000);
                             url = urla + NickNameString + "\",\"Lat\":\"" + Latitude + "\",\"Lng\":\"" + Longitude + "\"}";
                         } else {
-                            url = urla + NickNameString + "\"}";
+                            url = urla + NickNameString + "\",\"Lat\":\"0\",\"Lng\":\"0\"}";
                         }
 
 
